@@ -1,17 +1,22 @@
 var todoList = {
   todos: ['item 1', 'item 2', 'item 3'],
 
-  displayTodos: function() {
+  displayTodos: function () {
     console.log('My Todos: ', this.todos);
   },
 
-  addTodo: function(todo) {
+  addTodo: function (todo) {
     this.todos.push(todo);
     this.displayTodos();
   },
 
-  changeTodo: function(position, newVal) {
+  changeTodo: function (position, newVal) {
     this.todos[position] = newVal;
+    this.displayTodos();
+  },
+
+  deleteTodo: function (position) {
+    this.todos.splice(position, 1);
     this.displayTodos();
   }
 };
